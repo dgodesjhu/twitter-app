@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 # Load API key from Hugging Face secrets
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets("OPENAI_API_KEY")
 openai.api_key = OPENAI_API_KEY
 
 st.write("🔍 Debug: API Key Exists:", bool(openai.api_key))  # Should print True if the key is found
