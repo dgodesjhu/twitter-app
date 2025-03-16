@@ -6,11 +6,11 @@ import numpy as np
 import os
 
 # Load API key from Hugging Face secrets
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-openai.api_key = OPENAI_API_KEY
+api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = api_key
 
 st.write("🔍 Debug: API Key Exists:", bool(openai.api_key))  # Should print True if the key is found
-st.write("🔍 Debug: API Key (first 5 chars):", openai.api_key[:5] if api_key else "Not Found")
+st.write("🔍 Debug: API Key (first 5 chars):", openai.api_key[:5] if openai.api_key else "Not Found")
 
 # Load dataset of highly liked tweets
 @st.cache_data
