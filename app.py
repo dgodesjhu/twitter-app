@@ -9,6 +9,9 @@ import os
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 openai.api_key = OPENAI_API_KEY
 
+st.write("🔍 Debug: API Key Exists:", bool(api_key))  # Should print True if the key is found
+st.write("🔍 Debug: API Key (first 5 chars):", api_key[:5] if api_key else "Not Found")
+
 # Load dataset of highly liked tweets
 @st.cache_data
 def load_tweets():
