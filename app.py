@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 # Load API key from Hugging Face secrets
-OPENAI_API_KEY = os.environ.get("OAI_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 openai.api_key = OPENAI_API_KEY
 
 # Load dataset of highly liked tweets
