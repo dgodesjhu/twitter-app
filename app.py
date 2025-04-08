@@ -33,7 +33,7 @@ def build_faiss_index(df):
     index.add(embeddings)
     return index, embeddings
 
-# Find most similar tweet in the database
+# Find most similar tweet - could extend to multiple
 def find_similar_tweet(index, df, tweet):
     query_embedding = get_embedding(tweet)
     D, I = index.search(np.array([query_embedding]), k=1)  # Find closest match
